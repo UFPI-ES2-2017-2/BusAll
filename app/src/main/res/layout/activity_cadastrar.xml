@@ -19,7 +19,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome" />
+            android:text="Nome"/>
 
         <EditText
             android:id="@+id/editText"
@@ -33,7 +33,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email" />
+            android:text="Email"/>
 
         <EditText
             android:id="@+id/editText2"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="email"
-            android:inputType="textPersonName" />
+            android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/textView3"
@@ -55,12 +55,27 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="senha"
-            android:inputType="textPersonName" />
+            android:inputType="textVisiblePassword" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar Senha" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Confirmar senha"
+            android:inputType="textVisiblePassword" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar" />
+            android:text="Cadastrar"
+            android:onClick="cadastar"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

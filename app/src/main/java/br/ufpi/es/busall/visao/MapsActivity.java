@@ -76,7 +76,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager.requestLocationUpdates(provider, 400, 1, (LocationListener) this);
+        locationManager.requestLocationUpdates(/*provider*/LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
+        System.out.println(locationManager);
     }
 
     /**
@@ -107,15 +108,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(intent);
         }
+        System.out.println("GPS: "  + enabledGPS);
         mMap.setMyLocationEnabled(true);
 
-        Location posicao = locationManager.getLastKnownLocation(provider);
+        Location posicao = locationManager.getLastKnownLocation(/*provider*/LocationManager.GPS_PROVIDER);
         if(posicao != null){
             // Add a marker in Sydney and move the camera
             LatLng posicao_usuario = new LatLng(posicao.getLatitude(), posicao.getLongitude());
             mMap.addMarker(new MarkerOptions().position(posicao_usuario).title("USUARIO"));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(posicao_usuario));
         }
+        System.out.println("Posicao: " + posicao);
     }
 
 

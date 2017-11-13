@@ -4,29 +4,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import br.ufpi.es.busall.R;
 
-public class Login extends AppCompatActivity{
+public class Inicio extends AppCompatActivity {
 
-    private EditText editTextEmail, editTextSenha;
     private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        editTextEmail = findViewById(R.id.editText5);
-        editTextSenha = findViewById(R.id.editText6);
+        setContentView(R.layout.activity_inicial);
     }
 
-    public void entrar(View v){
+    public void chamarCadastro(View v){
+        toast = Toast.makeText(this, "Voce clicou no botao cadastrar", Toast.LENGTH_SHORT);
+        toast.show();
+        Intent intent = new Intent(this, CadastroUsuario.class);
+        startActivity(intent);
+
+    }
+
+    public void chamarEntrar(View v){
         toast = Toast.makeText(this, "Voce clicou no botao entrar", Toast.LENGTH_SHORT);
         toast.show();
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
+
 }
