@@ -24,9 +24,13 @@ public class Login extends AppCompatActivity{
     }
 
     public void entrar(View v){
-        toast = Toast.makeText(this, "Voce clicou no botao entrar", Toast.LENGTH_SHORT);
-        toast.show();
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
+
+        if(editTextEmail.getText().toString().equals("usuario") && editTextSenha.getText().toString().equals("123")){
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+        }else {
+            toast = Toast.makeText(this, "Voce clicou no botao entrar", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 }
